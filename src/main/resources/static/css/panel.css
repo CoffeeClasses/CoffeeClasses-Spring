@@ -1,0 +1,108 @@
+body {
+    background: radial-gradient(circle at top, rgb(243, 243, 243) 90%, rgb(212, 200, 193) 99%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Header Styles */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--secondary-background-gradient);
+    padding: 15px 30px;
+    color: #000000;
+    border-bottom:3px solid var(--primary-color);
+    box-shadow: var(--default-shadow);
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+}
+
+.project-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.panel-links {
+    display: flex;
+    gap: 20px;
+}
+
+.panel-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.panel-links a:hover {
+    color: #3498db;
+}
+
+/* User Actions Styles */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.logout-form {
+    display: inline;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Main Content Area */
+main {
+    padding: 20px;
+    min-height: 70vh;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .panel-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .user-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

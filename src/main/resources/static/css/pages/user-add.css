@@ -1,0 +1,96 @@
+/* Add User Container */
+.add-user {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Heading */
+.add-user h1 {
+    font-size: 2.5em;
+    color: #2980b9;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+.add-user form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Form Group (label + input) */
+.add-user .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+}
+
+/* Labels */
+.add-user label {
+    font-size: 1em;
+    color: #34495e;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+/* Input Fields */
+.add-user input[type="text"],
+.add-user input[type="email"],
+.add-user input[type="password"],
+.add-user input[type="date"],
+.add-user select {
+    padding: 8px 12px;
+    font-size: 1em;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px; /* Uniform width */
+}
+
+/* Buttons */
+.add-user button {
+    padding: 10px 15px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 15px;
+}
+
+.add-user button:hover {
+    background-color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-user {
+        width: 95%;
+        padding: 12px;
+    }
+
+    .add-user h1 {
+        font-size: 2em;
+    }
+
+    .add-user .form-group {
+        width: 100%;
+    }
+
+    .add-user button {
+        font-size: 1em;
+        padding: 10px;
+    }
+}

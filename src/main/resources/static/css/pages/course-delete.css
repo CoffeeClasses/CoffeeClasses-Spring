@@ -1,0 +1,97 @@
+/* Confirmation Container */
+.confirmation-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.confirmation-container h1 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* Description */
+.confirmation-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Course Name and Teacher */
+.confirmation-container h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.confirmation-container h3 {
+    font-size: 1.5em;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.confirmation-container .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between buttons */
+    flex-wrap: wrap; /* Allows buttons to stack on smaller screens */
+}
+
+/* Confirm Button */
+.confirmation-container .confirm-button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.confirmation-container .confirm-button:hover {
+    background-color: #c0392b;
+}
+
+/* Cancel Link */
+.confirmation-container .cancel-link {
+    padding: 10px 20px;
+    background-color: #bdc3c7;
+    color: #34495e;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.confirmation-container .cancel-link:hover {
+    background-color: #95a5a6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .confirmation-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .confirmation-container h1 {
+        font-size: 2em;
+    }
+
+    .confirmation-container p,
+    .confirmation-container h2,
+    .confirmation-container h3 {
+        font-size: 1em;
+    }
+
+    .confirmation-container .confirm-button,
+    .confirmation-container .cancel-link {
+        font-size: 1em;
+        padding: 10px;
+    }
+}

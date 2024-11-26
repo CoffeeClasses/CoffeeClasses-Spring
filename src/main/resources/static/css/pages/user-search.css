@@ -1,0 +1,123 @@
+/* Search Users Container */
+.search-users {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Search Heading */
+.search-users h1 {
+    font-size: 2.5em;
+    color: #2980b9;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+.search-users form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    gap: 20px; /* Space between elements */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    width: 100%;
+}
+
+.search-users label {
+    font-size: 1.1em;
+    color: #34495e;
+    margin-right: 10px; /* Add space between label and input */
+}
+
+.search-users select,
+.search-users input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    max-width: 300px; /* Limit the width of select/input elements */
+}
+
+.search-users input {
+    flex-grow: 1; /* Make the input take up available space */
+}
+
+.search-users button {
+    padding: 10px 15px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.search-users button:hover {
+    background-color: #3498db;
+}
+
+/* Results Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #bdc3c7;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+th {
+    background-color: #ecf0f1;
+    color: #2980b9;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr td {
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-users {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .search-users h1 {
+        font-size: 2em;
+    }
+
+    .search-users label, .search-users input, .search-users select {
+        font-size: 1em;
+    }
+
+    .search-users button {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    table th, table td {
+        font-size: 1em;
+    }
+}

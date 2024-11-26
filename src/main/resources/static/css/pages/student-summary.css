@@ -1,0 +1,118 @@
+/* Container for the profile content */
+.box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 20px 0 10px;
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+strong {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Lists and Course Information */
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+li {
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+.empty {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Course Information (For Student Type) */
+.course-box {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.course-box ul {
+    padding-left: 15px;
+}
+
+.course-box h3 {
+    color: #2980b9;
+}
+
+/* Grades and Average */
+.course-box p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.course-box p strong {
+    color: #2c3e50;
+}
+
+/* Empty Course or Grades State */
+.empty {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+}

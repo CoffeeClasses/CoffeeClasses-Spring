@@ -1,0 +1,55 @@
+body{
+    background-image:url("../svg/x-pattern.svg");
+    background-size:22px 22px;
+    animation: moveBackground 60s linear infinite;
+}
+/* Animation */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Banner */
+.banner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: var(--secondary-background-gradient);
+    padding:10px 20px;
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: var(--default-shadow);
+}
+.banner .site-title{
+    display: flex;
+    align-items: center;
+    min-width: fit-content;
+    font-size:1.7vw;
+    font-weight:bold;
+    color:#333;
+}
+.banner .site-title .icon{
+    height:3vw;
+    margin-right:1vw
+}
+
+/* Auth container */
+.auth-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:80vh;
+    padding:20px
+}
+.auth-container .auth-content{
+    background-color:#fff;
+    padding:2vw;
+    border-radius:0.5em;
+    box-shadow: var(--default-shadow);
+    max-width:400px;
+    width:100%;
+    text-align:center
+}
