@@ -29,7 +29,7 @@ public abstract class User {
 	@Column(nullable = false)
 	private String password;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "birthdate")
 	private LocalDate birthDate;
 
 	/*
