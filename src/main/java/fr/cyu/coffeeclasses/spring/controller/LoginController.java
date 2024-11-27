@@ -3,6 +3,7 @@ package fr.cyu.coffeeclasses.spring.controller;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,12 @@ public class LoginController {
 	// Login
 
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String getLoginPage() {
-		return JSP_PATH;
+	public String getLoginPage(HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return JSP_PATH;
+		} else {
+			return "redirect:/panel/home";
+		}
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -47,10 +52,14 @@ public class LoginController {
 		return "redirect:/login";
 	}
 
-	// Fallback panel link
+	// Fallback links
 
-	@RequestMapping(value = "/panel", method = RequestMethod.GET)
-	public String redirect() {
+	@GetMapping(value = "/panel")
+	public String panelHomeRedirect() {
 		return "redirect:/panel/home";
+	}
+	@GetMapping(value = "/")
+	public String rootRedirect() {
+		return "redirect:/login";
 	}
 }

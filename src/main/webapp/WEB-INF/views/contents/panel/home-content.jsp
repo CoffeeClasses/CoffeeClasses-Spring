@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<jsp:useBean id="user" scope="request" type="fr.cyu.coffeeclasses.vanilla.entity.user.User"/>
+<jsp:useBean id="user" scope="request" type="fr.cyu.coffeeclasses.spring.model.user.User"/>
 <% request.setAttribute("userType", user.getClass().getSimpleName()); %>
 
 <div class="home-content">

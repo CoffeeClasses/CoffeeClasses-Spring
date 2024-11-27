@@ -19,7 +19,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class AppConfig implements WebMvcConfigurer {
-
 	/* Interceptors */
 	@Bean
 	public UserInterceptor userInterceptor() {
@@ -43,21 +42,21 @@ public class AppConfig implements WebMvcConfigurer {
 		// User
 		registry.addInterceptor(userInterceptor()).addPathPatterns(
 				"/panel",
-				"/panel/*"
+				"/panel/**"
 		);
 
 		// Admin, Teacher, and Student
 		registry.addInterceptor(teacherInterceptor()).addPathPatterns(
 				"/panel/teacher",
-				"/panel/teacher/*"
+				"/panel/teacher/**"
 		);
 		registry.addInterceptor(studentInterceptor()).addPathPatterns(
 				"/panel/student",
-				"/panel/student/*"
+				"/panel/student/**"
 		);
 		registry.addInterceptor(administratorInterceptor()).addPathPatterns(
 				"/panel/admin",
-				"/panel/admin/*"
+				"/panel/admin/**"
 		);
 	}
 
