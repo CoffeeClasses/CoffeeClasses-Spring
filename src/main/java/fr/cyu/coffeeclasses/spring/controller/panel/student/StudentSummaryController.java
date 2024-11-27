@@ -19,11 +19,11 @@ public class StudentSummaryController {
 	private UserRepository userRepository;
 
 	@GetMapping("/panel/student/details")
-	public String showStudentSummary(HttpServletRequest request, Model model) {
+	public String showStudentSummary(HttpServletRequest request) {
 		User user = (User) request.getAttribute("user");
 
 		if (user instanceof Student student) {
-			model.addAttribute("target", student);
+			request.setAttribute("target", student);
 			return JSP_PATH;
 		} else {
 			// Unnecessary, the filter should've caught non-students anyways.

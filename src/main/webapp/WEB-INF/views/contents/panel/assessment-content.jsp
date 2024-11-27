@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 
-<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.element.Assessment" %>
-<jsp:useBean id="teacher" scope="request" type="fr.cyu.coffeeclasses.vanilla.entity.user.Teacher"/>
+<%@ page import="fr.cyu.coffeeclasses.spring.model.element.Assessment" %>
+<jsp:useBean id="teacher" scope="request" type="fr.cyu.coffeeclasses.spring.model.user.Teacher"/>
 
 <div class="assessment-management">
 	<h1>Gestion des notes et évaluations</h1>

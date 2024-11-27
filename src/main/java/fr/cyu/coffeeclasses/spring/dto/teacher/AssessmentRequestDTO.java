@@ -16,7 +16,7 @@ public class AssessmentRequestDTO {
 
 	@NotNull(message = "La note maximale doit être spécifiée.")
 	@Positive(message = "La note maximale doit être un nombre positif.")
-	private Double maxGrade; // Maximum grade for the assessment
+	private int maxGrade; // Maximum grade for the assessment
 
 	@NotNull(message = "La date de l'évaluation doit être spécifiée.")
 	@PastOrPresent(message = "La date de l'évaluation ne peut pas être dans le futur.")
@@ -37,10 +37,10 @@ public class AssessmentRequestDTO {
 		this.name = name;
 	}
 
-	public Double getMaxGrade() {
+	public int getMaxGrade() {
 		return maxGrade;
 	}
-	public void setMaxGrade(Double maxGrade) {
+	public void setMaxGrade(int maxGrade) {
 		this.maxGrade = maxGrade;
 	}
 

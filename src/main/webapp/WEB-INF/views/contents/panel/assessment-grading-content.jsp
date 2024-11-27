@@ -2,15 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 
 
-<jsp:useBean id="assessment" scope="request" type="fr.cyu.coffeeclasses.vanilla.entity.element.Assessment"/>
-<jsp:useBean id="studentGrades" scope="request" type="java.util.Map<fr.cyu.coffeeclasses.vanilla.entity.user.Student, fr.cyu.coffeeclasses.vanilla.entity.element.Grade>"/>
-<%@ page import="java.util.Set" %>
+<jsp:useBean id="assessment" scope="request" type="fr.cyu.coffeeclasses.spring.model.element.Assessment"/>
+<jsp:useBean id="studentGrades" scope="request" type="java.util.Map<fr.cyu.coffeeclasses.spring.model.user.Student, fr.cyu.coffeeclasses.spring.model.element.Grade>"/>
 
 <div class="assessment-grading-management">
 	<h2>Attribution des notes</h2>
 	<h4 id="assessment-name">${assessment.name}</h4>
 	<p>Cours : ${assessment.course.name}</p>
-	<p>Note maximale : ${assessment.maximum}/ ${assessment.maximum}</p>
+	<p>Note maximale : ${assessment.maximum}</p>
 	<form action="${pageContext.request.contextPath}/panel/teacher/grades" method="post">
 		<input type="hidden" name="assessmentId" value='${assessment.id}'>
 		<table id="gradingTable">
@@ -38,7 +37,7 @@
 										min="0"
 										max="${assessment.maximum}"
 										step="0.01"
-										name="${student.id}"
+										name="grades[${student.id}]"
 										value="${grade.value}"
 										required
 								/>
@@ -51,7 +50,7 @@
 										type="number"
 										min="0"
 										max="${assessment.maximum}"
-										name="${student.id}"
+										name="grades[${student.id}]"
 										required
 								/>
 							</td>

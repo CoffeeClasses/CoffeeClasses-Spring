@@ -2,6 +2,7 @@ package fr.cyu.coffeeclasses.spring.controller.panel;
 
 import fr.cyu.coffeeclasses.spring.model.user.User;
 import fr.cyu.coffeeclasses.spring.repository.UserRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -23,22 +24,14 @@ public class UserShowController {
 	private UserRepository userRepository;
 
 	@GetMapping("/panel/users/show")
-	public String showUser(@RequestParam(name = "id", required = false) String id, Model model) {
-		if (id != null) {
-			try {
-				Optional<User> targetOpt = userRepository.findById(Long.valueOf(id));
-				if (targetOpt.isPresent()) {
-					model.addAttribute("target", targetOpt.get());
-					System.out.println("Working...");
-					return JSP_PATH;
-				} else {
-					throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
-				}
-			} catch (NumberFormatException e) {
-				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-			}
+	public String showUser(@RequestParam(name = "id") Long id, HttpServletRequest request) {
+		Optional<User> targetOpt = userRepository.findById(id);
+		if (targetOpt.isPresent()) {
+			request.setAttribute("target", targetOpt.get());
+			System.out.println("Working...");
+			return JSP_PATH;
 		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No user ID specified.");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
 		}
 	}
 }
