@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="teachers" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.vanilla.entity.user.Teacher>"/>
+<jsp:useBean id="teachers" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.spring.model.user.Teacher>"/>
 
 <div class="add-course">
 	<h1>Ajouter un nouveau cours</h1>

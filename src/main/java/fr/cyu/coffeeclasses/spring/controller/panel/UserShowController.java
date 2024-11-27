@@ -31,7 +31,7 @@ public class UserShowController {
 			System.out.println("Working...");
 			return JSP_PATH;
 		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Utilisateur non trouvé.");
 		}
 	}
 }

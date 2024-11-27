@@ -29,12 +29,11 @@
 		</a>
 	</div>
 
-	<jsp:useBean id="users" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.vanilla.entity.user.User>"/>
-	<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.user.User" %>
-	<%@ page import="fr.cyu.coffeeclasses.vanilla.database.exception.DataNonsenseException" %>
-	<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.user.Teacher" %>
-	<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.user.Student" %>
-	<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.user.Administrator" %>
+	<jsp:useBean id="users" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.spring.model.user.User>"/>
+	<%@ page import="fr.cyu.coffeeclasses.spring.model.user.User" %>
+	<%@ page import="fr.cyu.coffeeclasses.spring.model.user.Teacher" %>
+	<%@ page import="fr.cyu.coffeeclasses.spring.model.user.Student" %>
+	<%@ page import="fr.cyu.coffeeclasses.spring.model.user.Administrator" %>
 	<%
 		if (!users.isEmpty()) { %>
 			<h2>Résultats</h2>
@@ -59,7 +58,7 @@
 								<% if (user instanceof Student) { %>Étudiant
 								<% } else if (user instanceof Teacher) { %>Professeur
 								<% } else if (user instanceof Administrator) { %>Administrateur
-								<% } else { throw new DataNonsenseException("User " + user.getId() + "  is not using a valid role."); } %>
+								<% } %>
 							</td>
 							<!-- Lien -->
 							<td>

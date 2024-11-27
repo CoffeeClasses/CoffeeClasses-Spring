@@ -20,8 +20,7 @@
 		</a>
 	</div>
 
-	<jsp:useBean id="courses" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.vanilla.entity.element.Course>"/>
-	<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.element.Course" %>
+	<jsp:useBean id="courses" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.spring.model.element.Course>"/>
 	<%
 		if (courses != null && !courses.isEmpty()) { %>
 	<h2>Liste des cours</h2>

@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="targetCourse" scope="request" type="fr.cyu.coffeeclasses.vanilla.entity.element.Course"/>
-<jsp:useBean id="teachers" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.vanilla.entity.user.Teacher>"/>
+<jsp:useBean id="targetCourse" scope="request" type="fr.cyu.coffeeclasses.spring.model.element.Course"/>
+<jsp:useBean id="teachers" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.spring.model.user.Teacher>"/>
 
 <div class="edit-course">
 	<h1>Modifier un cours</h1>

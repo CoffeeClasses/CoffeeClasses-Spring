@@ -38,7 +38,7 @@ public class GradeController {
 		// Teacher
 		Teacher teacher = (Teacher) request.getAttribute("user");
 		if (!assessment.getTeacher().getId().equals(teacher.getId())) {
-			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Teacher does not own class.");
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Vous ne possédez pas ce cours.");
 		}
 
 		// Collect grades
@@ -62,7 +62,7 @@ public class GradeController {
 		Teacher teacher = (Teacher) request.getAttribute("user");
 		// Ensure the teacher owns the assessment
 		if (!assessment.getTeacher().getId().equals(teacher.getId())) {
-			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Teacher does not own this class");
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Vous ne possédez pas ce cours.");
 		}
 
 		// Process grades for each student
@@ -71,10 +71,10 @@ public class GradeController {
 			Student student = userRepository.findById(studentId)
 					.filter(Student.class::isInstance) // Ensure it's a student
 					.map(Student.class::cast)
-					.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid student ID : " + studentId));
+					.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Référence étudiant invalide : " + studentId));
 			// Check if the student is part of the assessment
 			if (!assessment.getStudents().contains(student)) {
-				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Student not enrolled in this assessment: " + studentId);
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "L'étudiant suivant n'est pas concerné par cette évaluation : " + studentId);
 			}
 
 			// Update or create the grade

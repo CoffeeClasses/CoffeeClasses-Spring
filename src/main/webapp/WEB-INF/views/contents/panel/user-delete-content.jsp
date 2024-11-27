@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="target" scope="request" type="fr.cyu.coffeeclasses.vanilla.entity.user.User"/>
+<jsp:useBean id="target" scope="request" type="fr.cyu.coffeeclasses.spring.model.user.User"/>
 
 <div class="confirmation-container">
 	<h1>Confirmer la suppression</h1>

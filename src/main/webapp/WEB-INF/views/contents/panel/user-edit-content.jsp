@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="target" scope="request" type="fr.cyu.coffeeclasses.vanilla.entity.user.User"/>
-<jsp:useBean id="availableCourses" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.vanilla.entity.element.Course>"/>
-<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.user.Teacher" %>
-<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.user.Student" %>
-<%@ page import="fr.cyu.coffeeclasses.vanilla.entity.element.Course" %>
+<jsp:useBean id="target" scope="request" type="fr.cyu.coffeeclasses.spring.model.user.User"/>
+<jsp:useBean id="availableCourses" scope="request" type="java.util.Set<fr.cyu.coffeeclasses.spring.model.element.Course>"/>
+<%@ page import="fr.cyu.coffeeclasses.spring.model.user.Teacher" %>
+<%@ page import="fr.cyu.coffeeclasses.spring.model.user.Student" %>
+<%@ page import="fr.cyu.coffeeclasses.spring.model.element.Course" %>
 
 <div class="search-users">
 	<h1>Modifier un utilisateur</h1>

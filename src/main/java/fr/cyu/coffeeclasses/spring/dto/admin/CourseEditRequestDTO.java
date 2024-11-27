@@ -12,7 +12,7 @@ public class CourseEditRequestDTO {
 	private String name; // Course name
 
 	@NotNull(message = "L'enseignant est requis.")
-	private Long teacherId; // Selected teacher's ID
+	private Long teacher; // Selected teacher's ID
 
 	// Getters and Setters
 	public Long getId() {
@@ -29,10 +29,10 @@ public class CourseEditRequestDTO {
 		this.name = name;
 	}
 
-	public Long getTeacherId() {
-		return teacherId;
+	public Long getTeacher() {
+		return teacher;
 	}
-	public void setTeacherId(Long teacherId) {
-		this.teacherId = teacherId;
+	public void setTeacher(Long teacher) {
+		this.teacher = teacher;
 	}
 }
