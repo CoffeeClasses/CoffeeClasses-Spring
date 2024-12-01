@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 
 @Service
-public class LoginService {
+public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 

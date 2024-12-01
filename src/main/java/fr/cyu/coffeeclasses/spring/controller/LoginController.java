@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.cyu.coffeeclasses.spring.dto.LoginRequestDTO;
 import fr.cyu.coffeeclasses.spring.model.user.User;
-import fr.cyu.coffeeclasses.spring.service.LoginService;
+import fr.cyu.coffeeclasses.spring.service.UserService;
 
 import java.util.Optional;
 
@@ -19,7 +19,7 @@ public class LoginController {
 	private static final String JSP_PATH = "login";
 
 	@Autowired
-	private LoginService authService;
+	private UserService authService;
 
 	// Login
 

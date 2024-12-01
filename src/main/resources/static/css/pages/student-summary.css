@@ -54,6 +54,20 @@ li {
     font-size: 1.1em;
     padding: 5px;
 }
+.btn-custom {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
 
 .empty {
     font-style: italic;
