@@ -11,6 +11,7 @@ import fr.cyu.coffeeclasses.spring.model.user.Teacher;
 import fr.cyu.coffeeclasses.spring.model.user.User;
 import fr.cyu.coffeeclasses.spring.repository.CourseRepository;
 import fr.cyu.coffeeclasses.spring.repository.UserRepository;
+import fr.cyu.coffeeclasses.spring.service.MailService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,9 @@ public class UserAdminController {
 
 	@Autowired
 	private CourseRepository courseRepository;
+
+	@Autowired
+	private MailService mailService;
 
 	// Search user
 
@@ -161,6 +165,7 @@ public class UserAdminController {
 
 			// Save
 			userRepository.save(target);
+			mailService.sendMail(target, "Données mises à jour", "Bonjour,\nVos informations ont bien été mises à jour par la scolarité.");
 
 			return "redirect:/panel/admin/users";
 		} else {

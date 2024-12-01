@@ -1,5 +1,6 @@
 package fr.cyu.coffeeclasses.spring.controller.panel.teacher;
 
+import fr.cyu.coffeeclasses.spring.ApplicationStartupRunner;
 import fr.cyu.coffeeclasses.spring.dto.teacher.GradingRequestDTO;
 import fr.cyu.coffeeclasses.spring.model.element.Assessment;
 import fr.cyu.coffeeclasses.spring.model.element.Grade;
@@ -8,7 +9,10 @@ import fr.cyu.coffeeclasses.spring.model.user.Teacher;
 import fr.cyu.coffeeclasses.spring.repository.AssessmentRepository;
 import fr.cyu.coffeeclasses.spring.repository.CourseRepository;
 import fr.cyu.coffeeclasses.spring.repository.UserRepository;
+import fr.cyu.coffeeclasses.spring.service.MailService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -25,11 +29,14 @@ import java.util.Optional;
 @Controller
 public class GradeController {
 	private static final String JSP_PATH = "panel/teacher/assessment-grading";
+	private static final Logger logger = LoggerFactory.getLogger(GradeController.class);
 
 	@Autowired
 	private AssessmentRepository assessmentRepository;
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private MailService mailService;
 
 	@GetMapping("/panel/teacher/grades")
 	public String showPage(@RequestParam(name = "assessmentId") Long id, HttpServletRequest request) {
@@ -73,20 +80,25 @@ public class GradeController {
 					.map(Student.class::cast)
 					.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Référence étudiant invalide : " + studentId));
 			// Check if the student is part of the assessment
-			if (!assessment.getStudents().contains(student)) {
-				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "L'étudiant suivant n'est pas concerné par cette évaluation : " + studentId);
-			}
+			if (assessment.getStudents().contains(student)) {
+				// Update or create the grade
+				Optional<Grade> existingGrade = assessment.getGradeForStudent(student);
+				if (existingGrade.isPresent()) {
+					Grade grade = existingGrade.get();
+					grade.setValue(gradeValue);
+				} else {
+					assessment.getCourse().getEnrollmentForStudent(student)
+							.ifPresent(enrollment -> {
+								assessment.addGrade(enrollment, gradeValue);
+							});
+				}
 
-			// Update or create the grade
-			Optional<Grade> existingGrade = assessment.getGradeForStudent(student);
-			if (existingGrade.isPresent()) {
-				Grade grade = existingGrade.get();
-				grade.setValue(gradeValue);
+				// Notify
+				String message = "Votre note mise à jour pour l'évaluation: "+assessment.getName()+" ("+assessment.getCourse().getName()+") est disponible.\n"
+						+ "Accédez à la plateforme CoffeeClasses pour la consulter.";
+				mailService.sendMail(student, "Note disponible", message);
 			} else {
-				assessment.getCourse().getEnrollmentForStudent(student)
-				.ifPresent(enrollment -> {
-					assessment.addGrade(enrollment, gradeValue);
-				});
+				logger.warn("Student {} is not involved in assessment.", student.getId());
 			}
 		});
 
