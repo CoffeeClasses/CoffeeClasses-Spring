@@ -59,7 +59,7 @@ CREATE DATABASE coffeeclassesdb OWNER coffeeclasses;
 You can either deploy the built `.war` file to a Tomcat server or run the application directly with the following command :
 
 > [!NOTE]
-> In some situations, it may be necessary to run `mvn clean` to avoid dependency issues before running the `package` command.
+> In some situations, it may be necessary to run `mvn clean` to avoid dependency issues before running the `spring-boot:run` command.
 
 | Linux | Windows |
 | --- | --- | 
