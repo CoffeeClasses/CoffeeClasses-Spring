@@ -33,7 +33,7 @@
 		<c:if test="${userType == 'Student'}">
 			<div class="feature-card">
 				<h2>Gestion des cours</h2>
-				<p>Consultez la liste de vos cours et leurs détails, comme les professeurs associés ou les ressources disponibles.</p>
+				<p>Consultez la liste de vos cours et leurs détails, comme les professeurs associés.</p>
 			</div>
 			<div class="feature-card">
 				<h2>Résultats et notes</h2>
@@ -47,16 +47,8 @@
 
 		<c:if test="${userType == 'Teacher'}">
 			<div class="feature-card">
-				<h2>Gestion des cours</h2>
-				<p>Créez, modifiez ou supprimez les cours que vous enseignez et gérez les listes des inscrits.</p>
-			</div>
-			<div class="feature-card">
 				<h2>Évaluations</h2>
 				<p>Saisissez les notes de vos étudiants et suivez leurs progressions.</p>
-			</div>
-			<div class="feature-card">
-				<h2>Rapports de résultats</h2>
-				<p>Générez et partagez des rapports sur les performances des étudiants de vos cours.</p>
 			</div>
 		</c:if>
 
@@ -68,10 +60,6 @@
 			<div class="feature-card">
 				<h2>Gestion des cours</h2>
 				<p>Assignez les enseignants à des cours et organisez les inscriptions des étudiants.</p>
-			</div>
-			<div class="feature-card">
-				<h2>Statistiques globales</h2>
-				<p>Obtenez des résumés détaillés des performances de l’ensemble des utilisateurs.</p>
 			</div>
 		</c:if>
 	</div>

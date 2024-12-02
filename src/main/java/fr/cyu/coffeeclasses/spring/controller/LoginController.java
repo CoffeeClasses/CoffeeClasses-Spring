@@ -39,7 +39,7 @@ public class LoginController {
 			session.setAttribute("userId", user.get().getId());
 			return "redirect:/panel/home";
 		} else {
-			model.addAttribute("errorMessage", "Invalid email or password");
+			model.addAttribute("errorMessage", "Mot de passe ou mail invalide.");
 			return JSP_PATH;
 		}
 	}

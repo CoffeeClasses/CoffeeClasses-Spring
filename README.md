@@ -31,6 +31,9 @@ Then simply run this command, which uses the bundled *maven* wrapper (or you can
 > - Use a proper `mvn` installation (installed with [Chocolatey](https://chocolatey.org/) for example).
 > - Use a Linux-based system (like Ubuntu or even WSL).
 
+> [!NOTE]
+> In some situations, it may be necessary to run `mvn clean` to avoid dependency issues before running the `package` command.
+
 | Linux | Windows |
 | --- | --- | 
 | ```./mvnw package``` | ```mvnw.cmd package``` |
@@ -54,6 +57,9 @@ CREATE DATABASE coffeeclassesdb OWNER coffeeclasses;
 ### Running the application
 
 You can either deploy the built `.war` file to a Tomcat server or run the application directly with the following command :
+
+> [!NOTE]
+> In some situations, it may be necessary to run `mvn clean` to avoid dependency issues before running the `package` command.
 
 | Linux | Windows |
 | --- | --- | 
